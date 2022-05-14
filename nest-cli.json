@@ -1,0 +1,16 @@
+{
+  "projects": {
+    "nestjs-file-upload": {
+      "type": "library",
+      "root": "libs/nestjs-file-upload",
+      "entryFile": "index",
+      "sourceRoot": "libs/nestjs-file-upload/src",
+      "compilerOptions": {
+        "tsConfigPath": "libs/nestjs-file-upload/tsconfig.lib.json"
+      }
+    }
+  },
+  "compilerOptions": {
+    "webpack": true
+  }
+}
