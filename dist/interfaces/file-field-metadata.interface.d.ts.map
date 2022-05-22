@@ -1,0 +1,1 @@
+{"version":3,"file":"file-field-metadata.interface.d.ts","sourceRoot":"","sources":["../../src/interfaces/file-field-metadata.interface.ts"],"names":[],"mappings":"AAAA,MAAM,WAAW,iBAAiB;IAC9B,SAAS,CAAC,EAAE,MAAM,CAAC;IACnB,WAAW,EAAE,MAAM,GAAG,MAAM,CAAC;IAE7B,gBAAgB,CAAC,EAAE,MAAM,EAAE,CAAC;IAC5B,OAAO,CAAC,EAAE,MAAM,CAAC;IACjB,YAAY,CAAC,EAAE,MAAM,CAAC;CACzB"}
