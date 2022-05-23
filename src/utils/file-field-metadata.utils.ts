@@ -11,16 +11,16 @@ export class FileFieldMetadataUtils {
 
         for (const propertyKey of fileFieldPropertyKeys) {
             const metadata = this.findFileFieldMetadata(target, propertyKey);
-            if ((metadata.fieldname ?? metadata.propertyKey) === propertyKey) {
+            if ((metadata.fieldname ?? metadata.propertyKey) === filename) {
                 return metadata;
             }
         }
     }
-    
+
     public static findFileFieldMetadata(target: Object, propertyKey: string | symbol) : FileFieldMetadata | undefined {
         return Reflect.getMetadata(FILE_FIELD_METADATA_KEY, target, propertyKey);
     }
- 
+
     public static maxFileSizeForType(target: Object): number {
         const fileFieldPropertyKeys = this.findTypeFileFieldsPropertyKeys(target);
 

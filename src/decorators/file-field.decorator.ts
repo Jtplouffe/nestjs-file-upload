@@ -14,11 +14,11 @@ export const FileField = (opts: FileFieldOptions = {}): PropertyDecorator => {
             propertyKey,
         };
 
-        Reflect.defineMetadata(FILE_FIELD_METADATA_KEY, metadata, target, propertyKey);
+        Reflect.defineMetadata(FILE_FIELD_METADATA_KEY, metadata, target.constructor, propertyKey);
 
-        const typeFileFields: Array<string | symbol> = Reflect.getMetadata(TYPE_FILE_FIELD_PROPERTY_KEYS_KEY, target);
+        const typeFileFields: Array<string | symbol> = Reflect.getMetadata(TYPE_FILE_FIELD_PROPERTY_KEYS_KEY, target.constructor);
         if (!typeFileFields?.includes(propertyKey)) {
-            Reflect.defineMetadata(TYPE_FILE_FIELD_PROPERTY_KEYS_KEY, [...typeFileFields, propertyKey], target);
+            Reflect.defineMetadata(TYPE_FILE_FIELD_PROPERTY_KEYS_KEY, [...(typeFileFields ?? []), propertyKey], target.constructor);
         }
     };
 };

@@ -4,7 +4,7 @@
   "description": "Provides an easy way to handle file handle in nestjs",
   "main": "index.js",
   "scripts": {
-    "build": "rimraf ./dist && tsc",
+    "build": "rimraf ./dist && tsc && cp package.json ./dist/",
     "prepublish": "npm run build"
   },
   "repository": {
@@ -31,7 +31,7 @@
     "@nestjs/common": "^8.4.5",
     "@nestjs/core": "^8.4.5",
     "@nestjs/platform-express": "^8.4.5",
-    "append-field": "^2.0.0",
+    "append-field": "^1.0.0",
     "busboy": "^1.6.0"
   }
 }

@@ -1,9 +1,8 @@
 {
   "compilerOptions": {
     "experimentalDecorators": true,
-    "target": "es2021",
+    "target": "es2017",
     "module": "commonjs",
-    "lib": ["es7"],
     "declaration": true,
     "declarationMap": true,
     "sourceMap": true,
