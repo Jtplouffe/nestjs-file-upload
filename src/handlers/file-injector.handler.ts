@@ -93,11 +93,11 @@ export class FileInjectorHandler<T> {
             );
         }
 
-        if (this.getBodyFieldCount(fieldname) >= (fileFieldMetadata.maxFile ?? 1)) {
+        if (this.getBodyFieldCount(fieldname) >= fileFieldMetadata.maxFile) {
             stream.resume();
             return this.onError(
                 new BadRequestException(
-                    `Expected maximum ${fileFieldMetadata.maxFile ?? 1} file(s) for field '${fieldname}.'`
+                    `Expected maximum ${fileFieldMetadata.maxFile} file(s) for field '${fieldname}.'`
                 )
             );
         }
@@ -111,11 +111,11 @@ export class FileInjectorHandler<T> {
         }
 
         // We need to check again, since a file could have been added to the body during the redaing of the buffer.
-        if (this.getBodyFieldCount(fieldname) >= (fileFieldMetadata.maxFile ?? 1)) {
+        if (this.getBodyFieldCount(fieldname) >= fileFieldMetadata.maxFile) {
             stream.resume();
             return this.onError(
                 new BadRequestException(
-                    `Expected maximum ${fileFieldMetadata.maxFile ?? 1} file(s) for field '${fieldname}.'`
+                    `Expected maximum ${fileFieldMetadata.maxFile} file(s) for field '${fieldname}.'`
                 )
             );
         }
@@ -128,7 +128,7 @@ export class FileInjectorHandler<T> {
             buffer,
         };
 
-        if ((fileFieldMetadata.maxFile ?? 1) > 1) {
+        if (fileFieldMetadata.maxFile > 1) {
             const currentBodyFieldValue = this.request.body[normalizedFieldname];
             if (!Array.isArray(currentBodyFieldValue)) {
                 this.request.body[normalizedFieldname] = [];

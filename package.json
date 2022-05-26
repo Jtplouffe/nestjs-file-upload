@@ -5,6 +5,7 @@
   "main": "index.js",
   "scripts": {
     "build": "rimraf ./dist && tsc && cp package.json ./dist/",
+    "build:pack": "npm run build && cd ./dist && npm pack",
     "prepublish": "npm run build"
   },
   "repository": {
