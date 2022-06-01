@@ -69,11 +69,7 @@ export class FileInjectorHandler<T> {
             return;
         }
 
-        const normalizedFieldname = fieldname.endsWith("[]") ? fieldname.substring(0, fieldname.length - 2) : fieldname;
-        const fileFieldMetadata = FileFieldMetadataUtils.findFileFieldMetadataByFieldname(
-            this.type,
-            normalizedFieldname
-        );
+        const fileFieldMetadata = FileFieldMetadataUtils.findFileFieldMetadataByFieldname(this.type, fieldname);
         if (!fileFieldMetadata) {
             stream.resume();
             return;
@@ -129,9 +125,9 @@ export class FileInjectorHandler<T> {
         };
 
         if (fileFieldMetadata.maxFile > 1) {
-            const currentBodyFieldValue = this.request.body[normalizedFieldname];
+            const currentBodyFieldValue = this.request.body[fieldname];
             if (!Array.isArray(currentBodyFieldValue)) {
-                this.request.body[normalizedFieldname] = [];
+                this.request.body[fieldname] = [];
                 if (currentBodyFieldValue) this.request.body.push(currentBodyFieldValue);
             }
         }
