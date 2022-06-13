@@ -56,6 +56,10 @@ export class FileInjectorHandler<T> {
         if (fieldInfo.nameTruncated) return this.onError(new PayloadTooLargeException("Fieldname truncated"));
         if (fieldInfo.valueTruncated) return this.onError(new PayloadTooLargeException("Field value truncated"));
 
+        // Skip the field's value if the field was registered as a file
+        const fileFieldMetadata = FileFieldMetadataUtils.findFileFieldMetadataByFieldname(this.type, fieldname);
+        if (fileFieldMetadata) return;
+
         appendField(this.request.body, fieldname, value);
     }
 
@@ -93,7 +97,7 @@ export class FileInjectorHandler<T> {
             stream.resume();
             return this.onError(
                 new BadRequestException(
-                    `Expected maximum ${fileFieldMetadata.maxFile} file(s) for field '${fieldname}.'`
+                    `Expected maximum ${fileFieldMetadata.maxFile} file(s) for field '${fieldname}'`
                 )
             );
         }
@@ -111,7 +115,7 @@ export class FileInjectorHandler<T> {
             stream.resume();
             return this.onError(
                 new BadRequestException(
-                    `Expected maximum ${fileFieldMetadata.maxFile} file(s) for field '${fieldname}.'`
+                    `Expected maximum ${fileFieldMetadata.maxFile} file(s) for field '${fieldname}'`
                 )
             );
         }

@@ -21,11 +21,6 @@ yarn-error.log
 /packages/**/.npmignore
 /packages/**/LICENSE
 
-# example
-/quick-start
-/example_dist
-/example
-
 # tests
 /test
 /benchmarks/memory
