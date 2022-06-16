@@ -1,2 +1,6 @@
 example
 *.ts
+!*.d.ts
+.vscode
+.editorconfig
+*.tgz

@@ -1,11 +1,12 @@
 {
   "name": "nestjs-file-upload",
-  "version": "1.0.0",
+  "version": "1.0.4",
   "description": "Provides an easy way to handle file handle in nestjs",
-  "main": "index.js",
+  "main": "./src/index.js",
+  "types": "./src/index.d.ts",
   "scripts": {
     "build": "rimraf ./dist && tsc",
-    "build:pack": "npm run build && cd ./dist && npm pack",
+    "build:pack": "npm run build && npm pack",
     "prepublish": "npm run build"
   },
   "repository": {
@@ -21,18 +22,20 @@
     "url": "https://github.com/Jtplouffe/nestjs-file-upload/issues"
   },
   "homepage": "https://github.com/Jtplouffe/nestjs-file-upload#readme",
+  "dependencies": {
+    "append-field": "^1.0.0",
+    "busboy": "^1.6.0"
+  },
+  "peerDependencies": {
+    "@nestjs/common": ">=8.0.0",
+    "@nestjs/core": ">=8.0.0",
+    "@nestjs/platform-express": ">=8.0.0"
+  },
   "devDependencies": {
     "@types/busboy": "^1.5.0",
     "@types/express": "^4.17.13",
     "@types/node": "^17.0.35",
     "reflect-metadata": "^0.1.13",
     "rimraf": "^3.0.2"
-  },
-  "dependencies": {
-    "@nestjs/common": "^8.4.5",
-    "@nestjs/core": "^8.4.5",
-    "@nestjs/platform-express": "^8.4.5",
-    "append-field": "^1.0.0",
-    "busboy": "^1.6.0"
   }
 }

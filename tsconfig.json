@@ -6,7 +6,6 @@
     "declaration": true,
     "declarationMap": true,
     "sourceMap": true,
-    "outDir": "./dist",
     "rootDir": "./src",
     "strict": true,
     "noImplicitAny": false,
@@ -15,5 +14,5 @@
     "esModuleInterop": true,
     "emitDecoratorMetadata": true
   },
-  "exclude": ["node_modules", "dist", "example"]
+  "exclude": ["node_modules", "example"]
 }
