@@ -68,6 +68,8 @@ export class MyController {
 
 An argument of type `fileFieldOptions` can be passed to the `FileField` decorator.
 
+You can pass the following properties as options:
+
 | Argument           | Type     | Description                                                                                                                                                        |
 | ------------------ | -------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
 | `fieldname`        | string   | Overrides the property key. Can be used if the field in the form has a different name.                                                                             |
