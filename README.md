@@ -35,7 +35,7 @@ export class MyDto {
 }
 ```
 
-The `FileField` can be combined with other validators, such as validaiton validator from `class-validator`.
+The `FileField` decorator can be combined with other decorators, such as validation decorators from `class-validator`.
 
 ```typescript
 import { Expose } from "class-transformer";
